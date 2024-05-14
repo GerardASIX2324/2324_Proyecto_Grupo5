@@ -1,10 +1,10 @@
 <?php
     $host = "localhost";
-    $nombreBD = "escuelas";
+    $nombreBD = "bd_escuela_proyecto";
     $userBD = "root";
     $passBD = "qazQAZ123";
     try {
-        $con = new PDO('mysql:host=localhost;dbname=escuelas', $userBD, $passBD);
+        $con = new PDO('mysql:host=localhost;dbname=bd_escuela_proyecto', $userBD, $passBD);
     } catch(PDOException $e) {
         echo "<p>Error de conexión: </p>" . $e->getMessage();
     }

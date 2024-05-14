@@ -22,7 +22,7 @@ create table tbl_clase (
 
 create table tbl_profesor (
     `id_prof` int(4) AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    `nom_prof` varchar(20) NOT NULL,
+    `nombre_prof` varchar(20) NOT NULL,
     `apellidos_prof` varchar(50) NOT NULL,
     `DNI_prof` char(9) NULL,
     `telf_prof` char(9) NULL,
@@ -40,7 +40,7 @@ create table tbl_ciclo (
 
 create table tbl_departamento (
     `id_dept` int(3) AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    `nom_dept` varchar(50) NOT NULL,
+    `nombre_dept` varchar(50) NOT NULL,
     `siglas_dept` varchar(7) NOT NULL
 );
 
@@ -67,9 +67,9 @@ add constraint `rel_departamento_profesor` foreign key
 
 
 -- Insert departamentos
-insert into tbl_departamento (nom_dept, siglas_dept )
+insert into tbl_departamento (nombre_dept, siglas_dept )
 VALUES ('Departamento de informatica', 'D_INFOR' );
-insert into tbl_departamento (nom_dept, siglas_dept )
+insert into tbl_departamento (nombre_dept, siglas_dept )
 VALUES ('Departamento de Gestion Adminstrativa', 'D_GA' );
 
 -- Insert ciclos
@@ -82,64 +82,64 @@ VALUES ('Sistemas Microinformaticos y Redes', 'SMX', 1);
 
 -- Inserts profes 
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Carlos', 'Ruiz Sánchez', '12345678A', '987654321', 'carlos@profesor.com', 1);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Ana', 'Gómez Martín', '23456789B', '654987321', 'ana@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Miguel', 'López Pérez', '34567890C', '123456789', 'miguel@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Laura', 'Hernández Rodríguez', '45678901D', '987654321', 'laura@profesor.com', 1);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('David', 'García Martínez', '56789012E', '654987321', 'david@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Sara', 'Pérez Gómez', '67890123F', '123456789', 'sara@profesor.com', 1);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Javier', 'Martínez López', '78901234G', '987654321', 'javier@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Elena', 'Gómez Rodríguez', '89012345H', '654987321', 'elena@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Daniel', 'Hernández Pérez', '90123456I', '123456789', 'daniel@profesor.com', 1);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Carmen', 'Martín Gómez', '11234567J', '987654321', 'carmen@profesor.com', 1);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Juan', 'López Martínez', '12345678K', '654987321', 'juan@profesor.com', 1);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('María', 'García Rodríguez', '23456789L', '123456789', 'maria@profesor.com', 1);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Pedro', 'Hernández Gómez', '34567890M', '987654321', 'pedro@profesor.com', 1);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Lucía', 'Martínez López', '45678901N', '654987321', 'lucia@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Diego', 'García Martínez', '56789012O', '123456789', 'diego@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Natalia', 'López Pérez', '67890123P', '987654321', 'natalia@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Jorge', 'Martínez Gómez', '78901234Q', '654987321', 'jorge@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Eva', 'García Rodríguez', '89012345R', '123456789', 'eva@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Marcos', 'López Martínez', '90123456S', '987654321', 'marcos@profesor.com', 2);
 
-INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
+INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept)
 VALUES ('Ana', 'Gómez López', '21234567T', '654987321', 'ana@profesor.com', 1);
 
 

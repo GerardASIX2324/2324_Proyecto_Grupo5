@@ -1,9 +1,87 @@
 * {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    background-color: rgb(170, 170, 170);
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    box-sizing: border-box;
+    margin: 0;
 }
 
+
+
+/*                       header                          */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #da8025b5;
+    padding-left: 2vw;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+.cont-ul {
+    display: flex;
+    align-items: center;
+}
+li {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.5vw;
+    transition:  all .3s ease 0s;
+    font-size: 1.4rem;
+}
+li:hover {
+    background-color: #da8025b5;
+    color: white;
+}
+.develop {
+    position: relative;
+}
+.ul-second {
+    display: none;
+    position: absolute;
+    margin-top: 1.5vw;
+}
+
+.ul-second > li {
+    width: 190px;
+    transform: translateX(-20px);
+    border-bottom:solid 1px #ffffff ;
+    text-align: center;
+    background-color: #da8025b5;
+    color: rgb(255, 255, 255);
+}
+
+.ul-second > li:hover {
+    background-color: #da8025b5;
+    color: rgb(255, 255, 255);
+}
+
+.develop:hover > .ul-second {
+    display: block;
+}
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.4rem;
+    background-color: #633200cc;
+}
+nav a:hover {
+    color: #ffffff;
+    background-color: #633200cc;
+}
+
+/*                       header                          */
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+body{
+    background-image: url(../img/FondoMockup1.png);
+    color: white;
+}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -14,17 +92,20 @@ table th,
 table td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #ffffff;
 }
 
 table th {
-    background-color: #666666;
+    background-color: #da8025b5;
 }
 
 table tbody tr:hover {
-    background-color: #f5f5f5;
+    background-color: #ffffffba;
+    color: black;
 }
-
+h2{
+    text-align: center;
+}
 a {
     display: inline-block;
     padding: 4px 8px;
@@ -33,25 +114,62 @@ a {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 4px;
-    background-color: rgb(78, 150, 233);
+    background-color: rgb(27, 121, 227);
 }
-
+.crear{
+    background-color: #37a500;
+}
+.crear:hover{
+    background-color: #1d8600;
+}
 a:hover {
-    background-color: #1bc02c;
+    background-color: #003a97;
 }
 .elim{
     background-color: red;
-    color: white;
 }
-/* Form Styles */
-input[type="text"],
-input[type="number"] {
-    width: 15%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+.elim:hover{
+    background-color: rgb(176, 0, 0);
+}
+form {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #00000099;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    text-align: center;
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #37a500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button[type="submit"]:hover{
+    background-color: #1d8600;
+}
 button {
     display: inline-block;
     padding: 4px 8px;
@@ -60,5 +178,16 @@ button {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 4px;
-    background-color: rgb(206, 202, 0);
+    background-color: #37a500;
+}
+button:hover{
+    background-color: #1d8600;
+}
+.fotos{
+    width: 80%;
+    text-align: auto;
+    margin-top: 20%;
+}
+.column-50{
+    width: 50%;
 }
