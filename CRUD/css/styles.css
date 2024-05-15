@@ -62,14 +62,14 @@ li:hover {
     display: block;
 }
 nav a {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 1.4rem;
-    background-color: #633200cc;
+    background-color: #da8025b5;
 }
 nav a:hover {
     color: #ffffff;
-    background-color: #633200cc;
+    background-color: #221100cc;
 }
 
 /*                       header                          */
@@ -97,6 +97,11 @@ table td {
 
 table th {
     background-color: #da8025b5;
+}
+.barra{
+    text-decoration: none;
+    border: none;
+    background-color: #9e4f00b9;
 }
 
 table tbody tr:hover {
@@ -146,7 +151,11 @@ label {
     margin-bottom: 5px;
     font-weight: bold;
 }
-
+.login{
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 40%;
+}
 input[type="text"],
 input[type="date"],
 input[type="number"] {
@@ -187,6 +196,10 @@ button:hover{
     width: 80%;
     text-align: auto;
     margin-top: 20%;
+}
+.fotodept{
+    margin-top: 8%;
+    width: 80%;
 }
 .column-50{
     width: 50%;

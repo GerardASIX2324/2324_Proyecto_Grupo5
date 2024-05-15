@@ -9,6 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+<header>
+    <nav>
+        <img src="../../img/logo.png" width="7%" alt="">
+        <ul class="cont-ul">
+            <li class="develop">
+                Administrador 
+                <ul class="ul-second">
+                    <li class="back"><a class="barra"href="pag/colabora1.html">Cerrar sesion</li></a>
+                </ul>
+            </li>
+            <li>
+
+            </li>
+        </ul>
+    </nav>
+</header>
+<br><br>
 <body>
     <h2>Editando...</h2>
     <?php
@@ -58,8 +75,8 @@
         </form>
     </div>
     <div class="column-50">
-            <img src="../../img/tabla_clases1.png" class="fotos">
-        </div>
+        <img src="../../img/tabla_clases1.png" class="fotos">
+    </div>
 </div>
 
 </body>

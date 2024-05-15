@@ -15,12 +15,12 @@
 ?>
 <header>
     <nav>
-        <img src="img/logo.png" width="10%" alt="">
+        <img src="img/logo.png" width="7%" alt="">
         <ul class="cont-ul">
             <li class="develop">
                 Administrador 
                 <ul class="ul-second">
-                    <li class="back"><a href="pag/colabora1.html">Cerrar sesion</li></a>
+                    <li class="back"><a class="barra"href="pag/colabora1.html">Cerrar sesion</li></a>
                 </ul>
             </li>
             <li>
@@ -31,7 +31,7 @@
 </header>
 <br><br>
 <h2>Tabla profesores</h2>
-<a href="index.php">Cambiar a la tabla alumnos</a>
+<a href="alumnos.php">Cambiar a la tabla alumnos</a>
 <a class="crear" href="./formularios/profesores/formCrear.php">Crear registro</a>
 <br><br>
 <table>
