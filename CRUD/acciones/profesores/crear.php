@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      $telefono = $_POST['telefono'];
      $mail = $_POST['mail'];
      $id_dept = $_POST['id_dept'];
-     $sql = "INSERT INTO tbl_profesor (nom_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept) VALUES (:nombre, :apellidos_prof, :DNI, :telefono, :mail, :id_dept)";
+     $sql = "INSERT INTO tbl_profesor (nombre_prof, apellidos_prof, DNI_prof, telf_prof, mail_prof, id_dept) VALUES (:nombre, :apellidos_prof, :DNI, :telefono, :mail, :id_dept)";
      $stmt = $con->prepare($sql);
      $stmt->bindParam(':nombre', $nombre);
      $stmt->bindParam(':apellidos_prof', $apellidos_prof);
@@ -16,6 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      $stmt->bindParam(':mail', $mail );
      $stmt->bindParam(':id_dept', $id_dept);
      $stmt->execute();
-     header('Location: ../../profesores.php');
+     header('Location: ../../view/profesores.php');
 }
 ?>

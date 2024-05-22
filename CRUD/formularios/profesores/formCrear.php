@@ -13,10 +13,11 @@
     <nav>
         <img src="../../img/logo.png" width="7%" alt="">
         <ul class="cont-ul">
+        <li class="develop"><a class="barra" href="../../view/profesores.php">Volver a la tabla</li></a>
             <li class="develop">
                 Administrador 
                 <ul class="ul-second">
-                    <li class="back"><a class="barra"href="pag/colabora1.html">Cerrar sesion</li></a>
+                    <li class="back"><a class="barra"href="../../index.php">Cerrar sesión</li></a>
                 </ul>
             </li>
             <li>

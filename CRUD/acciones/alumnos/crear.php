@@ -18,6 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      $stmt->bindParam(':fecha', $fecha);
      $stmt->bindParam(':id_clase', $id_clase);
      $stmt->execute();
-     header('Location: ../../index.php');
+     header('Location: ../../view/alumnos.php');
 }
 ?>

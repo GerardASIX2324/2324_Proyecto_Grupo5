@@ -72,6 +72,8 @@ nav a:hover {
     background-color: #221100cc;
 }
 
+
+
 /*                       header                          */
 .row{
     display: flex;
@@ -101,7 +103,7 @@ table th {
 .barra{
     text-decoration: none;
     border: none;
-    background-color: #9e4f00b9;
+    background-color: #9e4f0000;
 }
 
 table tbody tr:hover {
@@ -153,8 +155,10 @@ label {
 }
 .login{
     width: 20%;
-    margin-top: 5%;
+    margin-top: 10px;
     margin-left: 40%;
+    margin-bottom: 15px;
+
 }
 input[type="text"],
 input[type="date"],
@@ -197,10 +201,25 @@ button:hover{
     text-align: auto;
     margin-top: 20%;
 }
+.resultados{
+    font-weight: bold;
+}
 .fotodept{
     margin-top: 8%;
     width: 80%;
 }
 .column-50{
     width: 50%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="number"] {
+    text-align: center;
+    width: 70%; /* Puedes ajustar este valor según tus necesidades */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

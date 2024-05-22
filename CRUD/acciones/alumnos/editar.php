@@ -26,6 +26,6 @@ if (isset($id)) {
     $sentencia->bindParam(':clase', $clase);
     $sentencia->execute();
 
-    header('Location: ../../index.php');
+    header('Location: ../../view/alumnos.php');
 }
 ?>

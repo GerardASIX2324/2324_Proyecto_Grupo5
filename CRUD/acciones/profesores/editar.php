@@ -25,6 +25,6 @@ if (isset($id)) {
     $sentencia->bindParam(':id_dept', $id_dept);
     $sentencia->execute();
 
-    header('Location: ../../profesores.php');
+    header('Location: ../../view/profesores.php');
 }
 ?>

@@ -6,6 +6,6 @@ if ($codigo) {
     $sentencia = $con->prepare($sql);
     $sentencia->bindParam(':id', $codigo);
     $sentencia->execute();
-    header('Location: ../../profesores.php');
+    header('Location: ../../view/profesores.php');
 }
 ?>

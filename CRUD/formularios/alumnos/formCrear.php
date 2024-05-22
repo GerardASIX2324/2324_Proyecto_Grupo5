@@ -8,15 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/validacionLogin.js"></script>
 </head>
 <header>
     <nav>
         <img src="../../img/logo.png" width="7%" alt="">
         <ul class="cont-ul">
+        <li class="develop"><a class="barra" href="../../view/alumnos.php">Volver a la tabla</li></a>
             <li class="develop">
                 Administrador 
                 <ul class="ul-second">
-                    <li class="back"><a class="barra"href="pag/colabora1.html">Cerrar sesion</li></a>
+                    <li class="back"><a class="barra"href="../../index.php">Cerrar sesión</li></a>
                 </ul>
             </li>
             <li>
@@ -31,25 +33,37 @@
     <h2>Creando...</h2>
     <div class="row">
         <div class="column-50">
-        <form method="post" action="../../acciones/alumnos/crear.php">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre_alum"><br>
-            <label for="apellidos_alum">Apellidos del alumno:</label>
-            <input type="text" name="apellidos_alum"><br>
-            <label for="Dni">DNI:</label>
-            <input type="text" name="DNI"><br>
-            <label for="telefono">Telefono:</label>
-            <input type="text" name="telefono"><br> 
-            <label for="mail">Mail:</label>
-            <input type="text" name="mail"><br> 
-            <label for="fecha">Fecha de nacimiento:</label>
-            <input type="date" name="fecha"><br> 
+        <form method="post" action="../../acciones/alumnos/crear.php" >
+            <label for="nombre_alum">Nombre:</label><br>
+            <input type="text" name="nombre_alum" id="nombre"><br>
+            <p id="error_nombre"></p>
             <br>
-            <label for="fecha">id clase:</label>
-            <input type="number" min="1" max="6" name="id_clase"><br> 
-            <button type="submit">Enviar</button>
+            <label for="apellidos_alum">Apellidos del alumno:</label><br>
+            <input type="text" name="apellidos_alum" id="apellido"><br>
+            <p id="error_apellido"></p>
+            <br>
+            <label for="DNI">DNI:</label><br>
+            <input type="text" name="DNI" id="DNI"><br>
+            <p id="error_DNI"></p>
+            <br>
+            <label for="telefono">Telefono:</label><br>
+            <input type="text" name="telefono" id="telefono"><br> 
+            <p id="error_telefono"></p>
+            <br>
+            <label for="mail">Mail:</label><br>
+            <input type="text" name="mail" id="mail"><br> 
+            <p id="error_email"></p>
+            <br>
+            <label for="fecha">Fecha de nacimiento:</label><br>
+            <input type="date" name="fecha" id="fecha"><br> 
+            <p id="error_fecha"></p>
+            <br>
+            <label for="fecha">id clase:</label><br>
+            <input type="number" name="id_clase" id="id_clase"><br> 
+            <p id="error_id"></p>
+            <br>
+            <button type="submit" onclick="validarFormulario()">Enviar</button>
         </form>
-        <img src="../../img/tabla_clases.png" width="30%">
     </div>
     <div class="column-50">
         <img src="../../img/tabla_clases1.png" class="fotos">
