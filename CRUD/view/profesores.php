@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: ../index.php?error=1');
+    exit;
+}
+?>
 <head>
     <link rel="stylesheet" href="./../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,23 +21,22 @@
     $resultados = $tabla->fetchAll();
 ?>
 <header>
-    <nav>
-        <img src="../img/logo.png" width="7%" alt="">
+<nav>
+        <img src="../img/logo.png" class="logo" alt="">
         <ul class="cont-ul">
+            
             <li class="develop">
                 Administrador 
                 <ul class="ul-second">
-                    <li class="back"><a class="barra"href="../index.php">Cerrar sesión</li></a>
+                    <li class="letra"><a class="barra" href="../proc/logout.php">Cerrar sesión</li></a>
                 </ul>
             </li>
-            <li>
-
-            </li>
+            <li class="invi"></li></li class="invi"></li><li class="invi"></li><li class="invi"></li><li class="invi"></li>
         </ul>
     </nav>
 </header>
 <br><br>
-<h2>Tabla profesores</h2>
+<h2>Tabla profesores</h2><br>
 <a href="alumnos.php">Cambiar a la tabla alumnos</a>
 <a class="crear" href="./../formularios/profesores/formCrear.php">Crear registro</a>
 <br><br>
@@ -47,8 +54,8 @@
             <th>Nombre</th>
             <th>Apellidos</th>
             <th>DNI</th>
-            <th>Teléfono</th>
-            <th>Mail</th>
+            <th class="ocultar">Teléfono</th>
+            <th class="ocultar">Mail</th>
             <th>Departamento</th>
             <th>Acciones</th>
         </tr>
@@ -61,8 +68,8 @@
                 echo "<td>" . $fila['nombre_prof'] . "</td>";
                 echo "<td>" . $fila['apellidos_prof'] . "</td>";
                 echo "<td>" . $fila['DNI_prof'] . "</td>";
-                echo "<td>" . $fila['telf_prof'] . "</td>";
-                echo "<td>" . $fila['mail_prof'] . "</td>";
+                echo "<td class='ocultar'>" . $fila['telf_prof'] . "</td>";
+                echo "<td class='ocultar'>" . $fila['mail_prof'] . "</td>";
                 echo "<td>" . $fila['nombre_dept'] . "</td>";
                 echo "<td>";
                     echo "<a class='elim' href='./../acciones/profesores/eliminar.php?id=". $fila['id_prof'] . "'>Eliminar</a>";

@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: ../index.php?error=1');
+    exit;
+}
+?>
 <html>
 <head>
     <link rel="stylesheet" href="./../css/styles.css">
@@ -7,18 +15,16 @@
 </head>
 <header>
     <nav>
-        <img src="../img/logo.png" width="7%" alt="">
+        <img src="../img/logo.png" class="logo" alt="">
         <ul class="cont-ul">
             
             <li class="develop">
                 Administrador 
                 <ul class="ul-second">
-                    <li class="back"><a class="barra"href="index.php">Cerrar sesión</li></a>
+                    <li class="letra"><a class="barra" href="../proc/logout.php">Cerrar sesión</li></a>
                 </ul>
             </li>
-            <li>
-
-            </li>
+            <li class="invi"></li></li class="invi"></li><li class="invi"></li><li class="invi"></li><li class="invi"></li>
         </ul>
     </nav>
 </header>
@@ -35,7 +41,7 @@
 <body>
 <br><br>
     <h2>Tabla alumnos</h2>
-
+    <br>
     <a href="profesores.php">Cambiar a la tabla profesores</a>
     <a class="crear" href="./../formularios/alumnos/formCrear.php">Crear registro</a>
     <br><br>
@@ -52,9 +58,9 @@
                 <th>Nombre</th>
                 <th>Apellidos</th>
                 <th>DNI</th>
-                <th>Teléfono</th>
-                <th>Mail</th>
-                <th>Fecha nacimiento</th>
+                <th class="ocultar">Teléfono</th>
+                <th class="ocultar">Mail</th>
+                <th class="ocultar">Fecha nacimiento</th>
                 <th>Clase</th>
                 <th>Acciones</th>
             </tr>
@@ -67,9 +73,9 @@
                     echo "<td>" . $fila['nombre_alum'] . "</td>";
                     echo "<td>" . $fila['apellidos_alum'] . "</td>";
                     echo "<td>" . $fila['DNI_alum'] . "</td>";
-                    echo "<td>" . $fila['telf_alum'] . "</td>";
-                    echo "<td>" . $fila['mail_alum'] . "</td>";
-                    echo "<td>" . $fila['fecha_naci_alum'] . "</td>";
+                    echo "<td class='ocultar'>" . $fila['telf_alum'] . "</td>";
+                    echo "<td class='ocultar' >" . $fila['mail_alum'] . "</td>";
+                    echo "<td class='ocultar'>" . $fila['fecha_naci_alum'] . "</td>";
                     echo "<td>" . $fila['nombre_clase'] . "</td>";
                     echo "<td>";
                         echo "<a class='elim' href='./../acciones/alumnos/eliminar.php?id=". $fila['id_alum'] . "'>Eliminar</a>";
@@ -80,6 +86,5 @@
             ?>
         </tbody>
     </table>
-    
 </body>
 </html>

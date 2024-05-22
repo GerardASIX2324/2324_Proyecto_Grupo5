@@ -8,16 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../../js/validacionLogin.js"></script>
+
 </head>
 <header>
     <nav>
-        <img src="../../img/logo.png" width="7%" alt="">
+        <img src="../../img/logo.png" class="logo" alt="">
         <ul class="cont-ul">
         <li class="develop"><a class="barra" href="../../view/profesores.php">Volver a la tabla</li></a>
             <li class="develop">
                 Administrador 
                 <ul class="ul-second">
-                    <li class="back"><a class="barra"href="../../index.php">Cerrar sesión</li></a>
+                    <li class="back"><a class="barra" href="../../proc/logout.php">Cerrar sesión</li></a>
                 </ul>
             </li>
             <li>
@@ -34,18 +36,33 @@
         <div class="column-50">
             <form method="post" action="../../acciones/profesores/crear.php">
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre_prof"><br>
-                <label for="apellidos_prof">Apellidos:</label>
-                <input type="text" name="apellidos_prof"><br>
-                <label for="Dni">DNI:</label>
-                <input type="text" name="DNI"><br>
-                <label for="telefono">Telefono:</label>
-                <input type="text" name="telefono"><br> 
-                <label for="mail">Mail:</label>
-                <input type="text" name="mail"><br>
+                <input type="text" name="nombre_prof"  id="nombre"><br>
+                <p id="error_nombre"></p>
                 <br>
-                <label for="fecha">id departamento:</label>
-                <input type="number" name="id_dept" min="1" max="2"><br> 
+                <label for="apellidos_prof">Apellidos:</label>
+                <input type="text" name="apellidos_prof"  id="apellido"><br>
+                <p id="error_apellido"></p>
+                <br>
+                <label for="Dni">DNI:</label>
+                <input type="text" name="DNI" id="DNI"><br>
+                <p id="error_DNI"></p>
+                <br>
+                <label for="telefono">Telefono:</label>
+                <input type="text" name="telefono" id="telefono"><br> 
+                <p id="error_telefono"></p>
+                <br>
+                <label for="mail">Mail:</label>
+                <input type="text" name="mail" id="mail"><br>
+                <p id="error_email"></p>
+                <br>
+                <label for="id_dept">Departamento:</label><br>
+                <select name="id_dept" id="opciones" onclick="validarOpciones()">
+                <option disabled selected value="opcion0">Selecciona una opcion:</option>
+                    <option value="1" >Departamento de Informática</option>
+                    <option value="2" >Departamento de Gestión Administrativa</option>
+                </select><br>
+                <p id="error_opciones"></p>
+                <br>
                 <button type="submit">Enviar</button>
             </form>
         </div>

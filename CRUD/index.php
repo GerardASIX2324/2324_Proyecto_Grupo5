@@ -8,11 +8,9 @@
 </head>
 <header>
     <nav>
-        <img src="img/logo.png" width="7%" alt="">
+        <img src="img/logo.png" class="logo" alt="">
         <ul class="cont-ul">
             
-
-            </li>
         </ul>
     </nav>
 </header>
@@ -20,15 +18,21 @@
     <div class="img">
         <img src="./IMG/redondauser.jpg" alt="user" class="login">
     </div>
-    <form class="login" onsubmit="return validarLogin()" method="post">         
-        <label for="usuario" class="login">Usuario:</label>         
+    <form class="indice" action="proc/procesar.php" method="post" onsubmit="return validarLogin()">        
+        <label for="usuario">Usuario:</label>         
         <input type="text" id="usuario" name="usuario" required><br><br>         
-        <label for="contrasena">Contraseña:</label>         
-        <input type="password" id="contrasena" name="contrasena" required><br><br>         
-        <button type="submit" value="Iniciar Sesión">Validar sesion</button>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>  
+        <?php
+            if (isset($_GET['error']) && $_GET['error'] == 1) {
+                echo "<p style='color: red;'>Error. No puedes acceder así. Debes iniciar sesión para poder continuar</p><br>";
+            }
+            ?>  
+
+        <button type="submit" value="Iniciar Sesión">ENTRAR</button>
     <br>         
         <p id="validar"></p>
     </form>
-
+    
 </body>
 </html>

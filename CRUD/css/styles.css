@@ -2,6 +2,7 @@
     font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    font-size: 14px;
     box-sizing: border-box;
     margin: 0;
 }
@@ -18,7 +19,7 @@ nav {
     background-color: #da8025b5;
     padding-left: 2vw;
     color: #ffffff;
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 .cont-ul {
     display: flex;
@@ -42,6 +43,7 @@ li:hover {
     display: none;
     position: absolute;
     margin-top: 1.5vw;
+    font-size: 1.4rem;
 }
 
 .ul-second > li {
@@ -67,6 +69,9 @@ nav a {
     font-size: 1.4rem;
     background-color: #da8025b5;
 }
+.invi:hover{
+    background-color: #994d0000;
+}
 nav a:hover {
     color: #ffffff;
     background-color: #221100cc;
@@ -75,6 +80,8 @@ nav a:hover {
 
 
 /*                       header                          */
+
+
 .row{
     display: flex;
     flex-direction: row;
@@ -105,13 +112,16 @@ table th {
     border: none;
     background-color: #9e4f0000;
 }
-
+.letra{
+    font-size: 1rem;
+}
 table tbody tr:hover {
     background-color: #ffffffba;
     color: black;
 }
 h2{
     text-align: center;
+    font-size: 2rem;
 }
 a {
     display: inline-block;
@@ -147,19 +157,30 @@ form {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.indice{
+    width: 30%;
+}
 
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
+select {
+    text-align: center;
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 .login{
     width: 20%;
     margin-top: 10px;
     margin-left: 40%;
     margin-bottom: 15px;
-
 }
+
 input[type="text"],
 input[type="date"],
 input[type="number"] {
@@ -223,3 +244,67 @@ input[type="number"] {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+.img{
+    width: 100%;
+}
+.logo{
+    width: 7%;
+}
+
+
+@media screen and (max-width: 800px){
+    .login{
+        width: 80%;
+        margin-left: 10%;
+    }
+    nav {
+        padding: 3%;
+
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+    .img{
+        width: 80%;
+        margin-left: 10%;
+    }
+    .logo{
+        width: 10%;
+    }
+    .ocultar{
+        display: none;
+    }
+    li {
+        font-size: 1rem;
+    }
+    .ul-second {
+        font-size: 1rem;
+    }
+    .letra{
+        font-size: 0.9rem;
+    }
+    nav a{
+        font-size: 1rem;
+    }
+    li{
+        font-size: 1rem;
+    }
+    .column-50{
+        width: 100%;
+    }
+    .fotos{
+        text-align: center;
+        margin-top: 3%;
+        margin-left: 10%;
+    }
+    .fotodept{
+        margin-top: 3%;
+        margin-left: 10%;
+    }
+    .indice{
+        width: 90%;
+    }
+    button[type="submit"] {
+        font-size: 70%;
+    }
+  }

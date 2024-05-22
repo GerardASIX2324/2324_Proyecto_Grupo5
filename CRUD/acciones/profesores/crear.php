@@ -17,5 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      $stmt->bindParam(':id_dept', $id_dept);
      $stmt->execute();
      header('Location: ../../view/profesores.php');
+}else{
+     header('Location: ../../formularios/profesores/formCrear.php');
+     exit(); 
 }
 ?>

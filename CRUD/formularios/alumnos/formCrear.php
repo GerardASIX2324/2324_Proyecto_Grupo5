@@ -12,17 +12,14 @@
 </head>
 <header>
     <nav>
-        <img src="../../img/logo.png" width="7%" alt="">
+        <img src="../../img/logo.png" class="logo" alt="">
         <ul class="cont-ul">
         <li class="develop"><a class="barra" href="../../view/alumnos.php">Volver a la tabla</li></a>
             <li class="develop">
                 Administrador 
                 <ul class="ul-second">
-                    <li class="back"><a class="barra"href="../../index.php">Cerrar sesión</li></a>
+                    <li class="back"><a class="barra" href="../../proc/logout.php">Cerrar sesión</li></a>
                 </ul>
-            </li>
-            <li>
-
             </li>
         </ul>
     </nav>
@@ -31,9 +28,10 @@
 <body>
 
     <h2>Creando...</h2>
+    <br>
     <div class="row">
         <div class="column-50">
-        <form method="post" action="../../acciones/alumnos/crear.php" >
+        <form method="post" action="../../acciones/alumnos/crear.php"  >
             <label for="nombre_alum">Nombre:</label><br>
             <input type="text" name="nombre_alum" id="nombre"><br>
             <p id="error_nombre"></p>
@@ -62,12 +60,13 @@
             <input type="number" name="id_clase" id="id_clase"><br> 
             <p id="error_id"></p>
             <br>
-            <button type="submit" onclick="validarFormulario()">Enviar</button>
+            <button type="submit">Enviar</button>
         </form>
     </div>
     <div class="column-50">
         <img src="../../img/tabla_clases1.png" class="fotos">
     </div>
+    <br><br>
 </body>
-</html> 
+</html>
           
