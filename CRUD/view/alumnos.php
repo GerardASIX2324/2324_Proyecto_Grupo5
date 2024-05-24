@@ -29,28 +29,56 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </nav>
 </header>
 
-<?php
-    require_once '../conexion.php';
-    // $tabla = $con->query('SELECT * FROM tbl_alumno');
-    $tabla = $con->query('SELECT tbl_alumno.id_alum, tbl_alumno.nombre_alum, tbl_alumno.apellidos_alum, tbl_alumno.DNI_alum , tbl_alumno.telf_alum, tbl_alumno.mail_alum , tbl_alumno.fecha_naci_alum, tbl_clase.nombre_clase FROM tbl_alumno INNER JOIN tbl_clase
-    ON tbl_alumno.id_clase = tbl_clase.id_clase order by tbl_alumno.id_alum asc;');
-    $resultados = $tabla->fetchAll();
-
-  
-?>
 <body>
 <br><br>
     <h2>Tabla alumnos</h2>
     <br>
+    <form class="buscador">
+    <?php
+        require_once '../conexion.php';
+            if (isset($_GET['filtro'])){
+                $filtro = $_GET['filtro'];
+                // Prepara la consulta SQL para la búsqueda
+                $consulta = $con->prepare("
+                    SELECT tbl_alumno.id_alum, tbl_alumno.nombre_alum, tbl_alumno.apellidos_alum, tbl_alumno.DNI_alum , tbl_alumno.telf_alum, tbl_alumno.mail_alum , tbl_alumno.fecha_naci_alum, tbl_clase.nombre_clase 
+                    FROM tbl_alumno 
+                    INNER JOIN tbl_clase
+                    ON tbl_alumno.id_clase = tbl_clase.id_clase
+                    WHERE id_alum LIKE :filtro 
+                    OR nombre_alum LIKE :filtro 
+                    OR apellidos_alum LIKE :filtro 
+                    OR DNI_alum LIKE :filtro 
+                    OR telf_alum LIKE :filtro 
+                    OR mail_alum LIKE :filtro 
+                    OR nombre_clase LIKE :filtro
+                "); 
+                $consulta->execute([':filtro' => '%' . $filtro . '%']);
+                $resultados = $consulta->fetchAll();
+    
+                echo '<a class="color" href="./alumnos.php">Volver a ver todos los registros</a>';
+
+            } else {
+                $tabla = $con->query('SELECT tbl_alumno.id_alum, tbl_alumno.nombre_alum, tbl_alumno.apellidos_alum, tbl_alumno.DNI_alum , tbl_alumno.telf_alum, tbl_alumno.mail_alum , tbl_alumno.fecha_naci_alum, tbl_clase.nombre_clase 
+                FROM tbl_alumno 
+                INNER JOIN tbl_clase
+                ON tbl_alumno.id_clase = tbl_clase.id_clase order by tbl_alumno.id_alum asc;');
+                $resultados = $tabla->fetchAll();
+            }
+    ?>
+        <input class="buscar" type="search" name="filtro" placeholder="Buscar" aria-label="Buscar"><br>
+        <button class="boton_enviar" type="submit">Buscar</button>
+    </form>
     <a href="profesores.php">Cambiar a la tabla profesores</a>
     <a class="crear" href="./../formularios/alumnos/formCrear.php">Crear registro</a>
+
     <br><br>
     <?php
         $countQuery = $con->query('SELECT COUNT(id_alum) as total FROM tbl_alumno');
         $countResult = $countQuery->fetch();
         $totalAlumnos = $countResult['total'];
     ?>
-    <p class="resultados">Total de alumnos: <?php echo $totalAlumnos; ?></p><br>
+    <h4 class="resultados">Total de alumnos: <?php echo $totalAlumnos; ?></h4><br>
+    
     <table>
         <thead>
             <tr>
@@ -66,7 +94,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </tr>
         </thead>
         <tbody>
+
             <?php
+
                 foreach ($resultados as $fila) {
                     echo "<tr>";
                     echo "<td>" . $fila['id_alum'] . "</td>";
@@ -79,7 +109,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                     echo "<td>" . $fila['nombre_clase'] . "</td>";
                     echo "<td>";
                         echo "<a class='elim' href='./../acciones/alumnos/eliminar.php?id=". $fila['id_alum'] . "'>Eliminar</a>";
-                        echo "<a href='./../formularios/alumnos/formEditar.php?id=" . $fila['id_alum'] . "'>Editar</a>";
+                        echo "<a class='boton1' href='./../formularios/alumnos/formEditar.php?id=" . $fila['id_alum'] . "'>Editar</a>";
                     echo "</td>";
                     echo "</tr>";
                 }

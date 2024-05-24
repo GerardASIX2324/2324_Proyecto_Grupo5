@@ -8,21 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src ="../../js/validacionLogin.js"></script>
 </head>
 <header>
     <nav>
         <img src="../../img/logo.png" class="logo" alt="">
         <ul class="cont-ul">
-        <li class="develop"><a class="barra" href="../../view/alumnos.php">Volver a la tabla</li></a>
-            <li class="develop">
+        <li class="develop">
                 Administrador 
                 <ul class="ul-second">
                     <li class="back"><a class="barra" href="../../proc/logout.php">Cerrar sesión</li></a>
                 </ul>
             </li>
-            <li>
-
-            </li>
+        <li class="develop"><a class="barra" href="../../view/alumnos.php">Volver a la tabla</li></a>
+            
         </ul>
     </nav>
 </header>
@@ -52,26 +51,33 @@
             <input type="text" name="id_alum" value="<?php echo $id; ?>" readonly>
 
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre_alum" value="<?php echo $nombre; ?>">
-
+            <input type="text" id="nombre" name="nombre_alum" required value="<?php echo $nombre; ?>"><br>
+            <p id="error_nombre"></p>
+            <br>
             <label for="apellidos_alum">Apellidos del alumno:</label>
-            <input type="text" name="apellidos_alum" value="<?php echo $apellidos; ?>">
-
+            <input type="text" id="apellido" name="apellidos_alum" required value="<?php echo $apellidos; ?>"><br>
+            <p id="error_apellido"></p>
+            <br>
             <label for="Dni">DNI:</label>
-            <input type="text" name="DNI" value="<?php echo $dni; ?>">
-
+            <input type="text" id="DNI" name="DNI" required value="<?php echo $dni; ?>"><br>
+            <p id="error_DNI"></p>
+            <br>
             <label for="telefono">Teléfono:</label>
-            <input type="text" name="telefono" value="<?php echo $telf; ?>">
-
+            <input type="text" id="telefono" name="telefono" required value="<?php echo $telf; ?>"><br>
+            <p id="error_telefono"></p>
+            <br>
             <label for="mail">Mail:</label>
-            <input type="text" name="mail" value="<?php echo $mail; ?>">
-
+            <input type="text" id="mail" name="mail" required value="<?php echo $mail; ?>"><br>
+            <p id="error_email"></p>
+            <br>
             <label for="fecha">Fecha de nacimiento:</label>
-            <input type="date" name="fecha" value="<?php echo $fecha; ?>">
-
+            <input type="date"  id="fecha" name="fecha" required value="<?php echo $fecha; ?>"><br>
+            <p id="error_fecha"></p>
+            <br>
             <label for="fecha">ID clase:</label>
-            <input type="number" name="clase" min="1" max="6" value="<?php echo $clase; ?>"><br>
-
+            <input type="number" id="id_clase" name="clase" min="1" max="6" required value="<?php echo $clase; ?>"><br>
+            <p id="error_id"></p>
+            <br>
             <button type="submit">Enviar</button>
         </form>
     </div>

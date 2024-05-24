@@ -1,5 +1,4 @@
-<?php 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {    
+<?php    
      require_once('../../conexion.php');     
      $nombre = $_POST['nombre_prof'];
      $apellidos_prof = $_POST['apellidos_prof'];
@@ -17,8 +16,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      $stmt->bindParam(':id_dept', $id_dept);
      $stmt->execute();
      header('Location: ../../view/profesores.php');
-}else{
-     header('Location: ../../formularios/profesores/formCrear.php');
-     exit(); 
-}
 ?>

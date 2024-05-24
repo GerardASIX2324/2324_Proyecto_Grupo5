@@ -123,6 +123,9 @@ h2{
     text-align: center;
     font-size: 2rem;
 }
+h4{
+    font-size: 1.5rem;
+}
 a {
     display: inline-block;
     padding: 4px 8px;
@@ -144,10 +147,39 @@ a:hover {
 }
 .elim{
     background-color: red;
+    width: 80px;
+    text-align: center;
 }
 .elim:hover{
     background-color: rgb(176, 0, 0);
 }
+
+.boton1{
+    text-align: center;
+    width: 80px;
+}
+
+.buscador{
+    width: 100%;
+    margin-right: 10px;
+    align-items: right;
+    width: 40%;
+    background-color: #ffffff00;
+    box-shadow: 0 0px 0px rgba(255, 255, 255, 0);
+    text-align: right;
+}
+.buscar{
+    border-radius: 10px;
+    width: 45%;
+    height: 41px;
+    margin-top: 10px;
+}
+.boton_enviar{
+    margin-top: 10px;
+
+    
+}
+
 form {
     width: 70%;
     text-align: center;
@@ -250,7 +282,12 @@ input[type="number"] {
 .logo{
     width: 7%;
 }
-
+.color{
+    background-color: #da8025b5;
+}
+.color:hover{
+    background-color: #6a3500;
+}
 
 @media screen and (max-width: 800px){
     .login{
@@ -262,7 +299,10 @@ input[type="number"] {
 
     }
     h2{
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    }
+    h4{
+        font-size: 1.2rem;
     }
     .img{
         width: 80%;
@@ -306,5 +346,12 @@ input[type="number"] {
     }
     button[type="submit"] {
         font-size: 70%;
+    }
+    .buscar{
+        width: 50%;
+        height: 30px;
+    }
+    .buscador{
+        width: 100%;
     }
   }

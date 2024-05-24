@@ -1,13 +1,17 @@
 <?php
 require_once '../../conexion.php';
 
-$id = $_REQUEST['id_prof'];
-$nombre = $_REQUEST['nombre_prof'];
-$apellidos_prof = $_REQUEST['apellidos_prof'];
-$DNI = $_REQUEST['DNI'];
-$telefono = $_REQUEST['telefono'];
-$mail = $_REQUEST['mail'];
-$id_dept = $_REQUEST['id_dept'];
+if(isset($_REQUEST['id_alum']) && isset($_REQUEST['nombre_alum']) && isset($_REQUEST['apellidos_alum']) && isset($_REQUEST['DNI']) && isset($_REQUEST['telefono']) && isset($_REQUEST['mail'])&& isset($_REQUEST['fecha']) && isset($_REQUEST['clase']) ){
+    $id = $_REQUEST['id_alum'];
+    $nombre = $_REQUEST['nombre_alum'];
+    $apellidos_alum = $_REQUEST['apellidos_alum'];
+    $DNI = $_REQUEST['DNI'];
+    $telefono = $_REQUEST['telefono'];
+    $mail = $_REQUEST['mail'];
+    $fecha = $_REQUEST['fecha'];
+    $clase = $_REQUEST['clase'];
+    
+}
 
 
 if (isset($id)) {

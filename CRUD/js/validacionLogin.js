@@ -34,9 +34,19 @@ document.addEventListener("DOMContentLoaded", (event) => {//PUESTO POR FATIMA :)
     DNI.onblur = validarDNI
     telefono.onblur = validarTelefono
     email.onblur = validarEmail
-    fecha.onblur = validarFecha
-    idClase.onblur = validarID
-    idDept.onblur = validarDept
+    console.log(idClase.value)
+    if(!!fecha){//SI ESTA NULL (VACIO ) LO VALIDA 
+        fecha.onblur = validarFecha
+
+    }else if(!!idClase){
+        console.log(idClase.value)
+        idClase.onblur = validarID
+
+    }
+    if(!!idDept){
+        idDept.onblur = validarDept
+    }
+    
 
 })
 
@@ -49,11 +59,12 @@ function validaNombre(){
         nombre.style.border = "solid red"
         return false;
         
-    }else if (!/^[a-zA-Z\s]+$/.test(nombre.value)){// Campo nombre no contiene solo letras
-        errorNombre.innerHTML = "<span style='color: red;'>El campo Nombre NO puede contener numeros";
-        errorNombre.style.display ="block"
-        nombre.style.border = "solid red"
+    }else if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(nombre.value)){ // Campo nombre no contiene solo letras puede contener acentos
+        errorNombre.innerHTML = "<span style='color: red;'>El campo Nombre NO puede contener números</span>";
+        errorNombre.style.display = "block";
+        nombre.style.border = "solid red";
         return false;
+    
     } else if(nombre.value.length < 3){
         errorNombre.innerHTML = "<span style='color: red;'>El campo Nombre debe tener 3 caracteres minimo";
         errorNombre.style.display ="block"
@@ -64,11 +75,17 @@ function validaNombre(){
         errorNombre.style.display ="block"
         nombre.style.border = "solid red"
         return false;
+    } else if((!isNaN(nombre.value))){
+        errorNombre.innerHTML = "<span style='color: red;'>El campo Nombre no debe tener mas de 20 caracteres";
+        errorNombre.style.display ="block"
+        nombre.style.border = "solid red"
+        return false;
     } else{
-        errorNombre.innerHTML = "<span style='color: black;'>"
-        errorNombre.style.display ="none"
-        nombre.style = "black"
-        return true
+        errorNombre.innerHTML = "<span style='color: black;'>";
+        errorNombre.style.display ="none";
+        nombre.style = "black";
+        return true;
+
     }
 
 }
@@ -79,11 +96,11 @@ function validaApellido(){
         errorApellido.innerHTML = "<span style='color: red;'>El campo Apellido no puede estar vacio";
         errorApellido.style.display ="block"
         apellido.style.border = "solid red"
-        return false;
-    }else if (!/^[a-zA-Z\s]+$/.test(apellido.value)){// Campo apellido no contiene solo letras
-        errorApellido.innerHTML = "<span style='color: red;'>El campo Nombre NO puede contener numeros";
-        errorApellido.style.display ="block"
-        apellido.style.border = "solid red"
+        return false
+    }else if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(apellido.value)){ // Campo nombre no contiene solo letras puede contener acentos
+        errorApellido.innerHTML = "<span style='color: red;'>El campo Nombre NO puede contener números</span>";
+        errorApellido.style.display = "block";
+        apellido.style.border = "solid red";
         return false;
     } else if(apellido.value.length < 3){
         errorApellido.innerHTML = "<span style='color: red;'>El campo Apellido debe tener al menos 3 caracteres";
@@ -95,7 +112,13 @@ function validaApellido(){
         errorApellido.style.display ="block"
         apellido.style.border = "solid red"
         return false;
-    } else{
+    } else if((!isNaN(apellido.value))){
+        errorApellido.innerHTML = "<span style='color: red;'>El campo Apellido no debe tener mas de 50 caracteres";
+        errorApellido.style.display ="block"
+        apellido.style.border = "solid red"
+        return false;
+    } 
+    else{
         errorApellido.innerHTML = "<span style='color: black;'>"
         errorApellido.style.display ="none"
         apellido.style = "black"
@@ -235,6 +258,7 @@ function validarFecha() {
 function validarID(){
     var error_ID = document.getElementById("error_id");
     var idClase = document.getElementById("id_clase");
+
     if(idClase.value >= 1 && idClase.value <= 6){
         error_ID.innerHTML = "<span style='color: black;'></span>";
         error_ID.style.display = "none";
@@ -249,20 +273,26 @@ function validarID(){
 
 }
 
-function validarOpciones(){
-    var opciones = document.getElementById("opciones").selectedIndex;
-    var error_opciones = document.getElementById("error_opciones");
-    console.log(opciones);
-    if( opciones == null || opciones == 0 ) {
-        error_opciones.innerHTML = "<span style='color: red;'>Debes seleccionar una opcion</span>";
-        error_opciones.style.display = "block";
-        opciones.style.border = "solid red";
+function validarDept(){
+    var error_IDDept = document.getElementById("error_iddept");
+    var idDept = document.getElementById("id_dept");
+
+    if(idDept.value >=1 && idDept.value <=2){
+        error_IDDept.innerHTML = "<span style='color: black;'></span>";
+        error_IDDept.style.display = "none";
+        idDept.style.borderColor = "black";
+        return true
+    } else if (idDept.value == "") {
+        error_IDDept.innerHTML = "<span style='color: red;'>El campo ID esta incorrecto</span>";
+        error_IDDept.style.display = "block";
+        idDept.style.border = "solid red";
         return false;
     }
-    error_opciones.innerHTML = "<span style='color: black;'></span>";
-    error_opciones.style.display = "none";
-    opciones.style.borderColor = "black";
-    return true;
+
 }
+
+
+
+
 
 

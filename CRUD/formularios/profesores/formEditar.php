@@ -8,21 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src ="../../js/validacionLogin.js"></script>
 </head>
 <header>
     <nav>
-       <img src="../../img/logo.png" class="logo" alt="">
+        <img src="../../img/logo.png" class="logo" alt="">
         <ul class="cont-ul">
-        <li class="develop"><a class="barra" href="../../view/profesores.php">Volver a la tabla</li></a>
-            <li class="develop">
+        <li class="develop">
                 Administrador 
                 <ul class="ul-second">
                     <li class="back"><a class="barra" href="../../proc/logout.php">Cerrar sesión</li></a>
                 </ul>
             </li>
-            <li>
-
-            </li>
+        <li class="develop"><a class="barra" href="../../view/profesores.php">Volver a la tabla</li></a>
+            
         </ul>
     </nav>
 </header>
@@ -48,19 +47,19 @@
         <div class="column-50">
             <form method="post" action="../../acciones/profesores/editar.php">
                 <label for="id">ID:</label>
-                <input type="text" name="id_prof" value="<?php echo $id; ?>" readonly><br>
+                <input type="text" name="id_prof" required value="<?php echo $id; ?>" readonly><br>
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre_prof" value="<?php echo $nombre; ?>"><br>
+                <input type="text" name="nombre_prof" required value="<?php echo $nombre; ?>"><br>
                 <label for="apellidos_alum">Apellidos:</label>
-                <input type="text" name="apellidos_prof"value="<?php echo $apellidos; ?>"><br>
+                <input type="text" name="apellidos_prof" required value="<?php echo $apellidos; ?>"><br>
                 <label for="Dni">DNI:</label>
-                <input type="text" name="DNI" value="<?php echo $dni; ?>"><br>
+                <input type="text" name="DNI" required value="<?php echo $dni; ?>"><br>
                 <label for="telefono">Telefono:</label>
-                <input type="text" name="telefono" value="<?php echo $telf; ?>"><br> 
+                <input type="text" name="telefono" required value="<?php echo $telf; ?>"><br> 
                 <label for="mail">Mail:</label>
-                <input type="text" name="mail" value="<?php echo $mail; ?>"><br> 
+                <input type="text" name="mail" required value="<?php echo $mail; ?>"><br> 
                 <label for="fecha">Id departamento:</label>
-                <input type="number" name="id_dept" min="1" max="2" value="<?php echo $id_dept; ?>"><br> 
+                <input type="number" name="id_dept" min="1" max="2" required value="<?php echo $id_dept; ?>"><br> 
                 
                 <button type="submit">Enviar</button>
             </form>

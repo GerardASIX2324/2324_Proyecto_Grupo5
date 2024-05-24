@@ -15,16 +15,14 @@
     <nav>
         <img src="../../img/logo.png" class="logo" alt="">
         <ul class="cont-ul">
-        <li class="develop"><a class="barra" href="../../view/profesores.php">Volver a la tabla</li></a>
-            <li class="develop">
+        <li class="develop">
                 Administrador 
                 <ul class="ul-second">
                     <li class="back"><a class="barra" href="../../proc/logout.php">Cerrar sesión</li></a>
                 </ul>
             </li>
-            <li>
-
-            </li>
+        <li class="develop"><a class="barra" href="../../view/profesores.php">Volver a la tabla</li></a>
+            
         </ul>
     </nav>
 </header>
@@ -36,32 +34,28 @@
         <div class="column-50">
             <form method="post" action="../../acciones/profesores/crear.php">
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre_prof"  id="nombre"><br>
+                <input type="text" name="nombre_prof" required id="nombre"><br>
                 <p id="error_nombre"></p>
                 <br>
                 <label for="apellidos_prof">Apellidos:</label>
-                <input type="text" name="apellidos_prof"  id="apellido"><br>
+                <input type="text" name="apellidos_prof"required  id="apellido"><br>
                 <p id="error_apellido"></p>
                 <br>
                 <label for="Dni">DNI:</label>
-                <input type="text" name="DNI" id="DNI"><br>
+                <input type="text" name="DNI" required id="DNI"><br>
                 <p id="error_DNI"></p>
                 <br>
                 <label for="telefono">Telefono:</label>
-                <input type="text" name="telefono" id="telefono"><br> 
+                <input type="text" name="telefono" required id="telefono"><br> 
                 <p id="error_telefono"></p>
                 <br>
                 <label for="mail">Mail:</label>
-                <input type="text" name="mail" id="mail"><br>
+                <input type="text" name="mail" required id="mail"><br>
                 <p id="error_email"></p>
                 <br>
-                <label for="id_dept">Departamento:</label><br>
-                <select name="id_dept" id="opciones" onclick="validarOpciones()">
-                <option disabled selected value="opcion0">Selecciona una opcion:</option>
-                    <option value="1" >Departamento de Informática</option>
-                    <option value="2" >Departamento de Gestión Administrativa</option>
-                </select><br>
-                <p id="error_opciones"></p>
+                <label for="fecha">id departamento:</label><br>
+                <input type="number" name="id_dept" required id="id_dept"><br> 
+                <p id="error_iddept"></p>
                 <br>
                 <button type="submit">Enviar</button>
             </form>
