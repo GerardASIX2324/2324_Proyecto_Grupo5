@@ -50,10 +50,6 @@ add constraint `rel_clase_alunmno` foreign key
 (`id_clase`) references tbl_clase(`id_clase`);
 
 alter table tbl_clase 
-add constraint `rel_profesor_clase` foreign key 
-(`id_prof`) references tbl_profesor(`id_prof`);
-
-alter table tbl_clase 
 add constraint `rel_ciclo_clase` foreign key 
 (`id_ciclo`) references tbl_ciclo(`id_ciclo`);
 
